@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digithn.library.dao.BookMapper">
+    <resultMap id="BaseResultMap" type="com.digithn.library.entity.Book">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="ISBN" jdbcType="VARCHAR" property="ISBN"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="author" jdbcType="VARCHAR" property="author"/>
+        <result column="category" jdbcType="VARCHAR" property="category"/>
+        <result column="status" jdbcType="TINYINT" property="status"/>
+        <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, ISBN, name, author, category, status, publish_time, create_time
+    </sql>
+
+    <insert id="insertBook" parameterType="com.digithn.library.entity.Book" useGeneratedKeys="true" keyProperty="id">
+        insert into book(ISBN, name, author, category, status, publish_time)
+        values(#{ISBN,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+        #{author,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR},
+        #{status,jdbcType=TINYINT}, #{publishTime,jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <select id="selectBookById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from book
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectBooks" parameterType="Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from book order by create_time desc
+        <if test="start!=null and count!=null">
+            limit #{start},#{count}
+        </if>
+    </select>
+
+    <select id="getTotalBooks" resultType="int">
+        select count(*) from book
+    </select>
+
+    <update id="updateBook" parameterType="com.digithn.library.entity.Book">
+        update book
+        <set>
+            <if test="ISBN != null">
+                ISBN = #{ISBN,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="author != null">
+                author = #{author,jdbcType=VARCHAR},
+            </if>
+            <if test="category != null">
+                category = #{category,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=TINYINT},
+            </if>
+            <if test="publishTime != null">
+                publish_time = #{publishTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <delete id="deleteBookById">
+        delete from book where id = #{id, jdbcType=BIGINT}
+    </delete>
+
+</mapper>
