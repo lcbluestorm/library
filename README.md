@@ -1,16 +1,14 @@
 # 简介
 ```
 本项目是一个基于Spring boot + Mybatis的图书管理系统后端，数据库采用mysql。
-主要功能包括 用户登录和图书管理（增删查改以及分页查询），虽然功能简单，
-但是它包含一个完整项目所需要的各个模块，是一套完整的web应用框架； 比如用户登录、代码分层、
-统一权限控制、统一异常处理、统一数据返回响应、数据库、swagger、restful规范接口等。
+主要功能包括 用户登录和图书管理（增删查改以及分页查询），虽然功能简单，但是它包含一个完整项目所需要的各个模块，是一套完整的web应用框架； 比如用户登录、代码分层、统一权限控制、统一异常处理、统一数据返回响应、数据库、swagger、restful规范接口等。
 ```
 
 # 快速开始
 1. 下载代码到本地    
->  git clone https://github.com/lcbluestorm/library.git
+`git clone https://github.com/lcbluestorm/library.git`
 2. 数据库/表准备  
-首先需要安装mysql数据库，然后连接数据库，执行项目中schema.sql文件中sql:  
+首先需要安装mysql数据库，连接数据库，然后执行项目中schema.sql文件中sql:  
 ```
 create database library;
 
