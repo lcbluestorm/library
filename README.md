@@ -54,7 +54,7 @@ index name_index(name)
 执行命令：`java -jar  library-0.0.1-SNAPSHOT.jar`  
 这样程序就运行起来了，接口就可以正常访问了。
 6. swagger查看API文档  
-   这样就可以打开 [swagger界面](http://localhost:8080/swagger-ui/index.html)查看api文档了。
+   这样就可以打开 [swagger界面](http://localhost:6800/swagger-ui/index.html)查看api文档了。
 
 
 # API
@@ -68,5 +68,5 @@ index name_index(name)
 * 更新book(/api/v1/books/{bookId} PUT)
 * 删除book(/api/v1/books/{bookId} DELETE)
 
-更多api详情，可以查看 [swagger界面](http://localhost:8080/swagger-ui/index.html)
+更多api详情，可以查看 [swagger界面](http://localhost:6800/swagger-ui/index.html)
 
