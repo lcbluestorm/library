@@ -1,9 +1,9 @@
 # 简介
-本项目是一个基于Spring boot + Mybatis的图书管理系统后端，数据库采用mysql。   
+`本项目是一个基于Spring boot + Mybatis的图书管理系统后端，数据库采用mysql。
 主要功能包括 用户登录和图书管理（增删查改以及分页查询），虽然功能简单，
 但是它包含一个完整项目所需要的各个模块，是一套完整的web应用框架； 比如用户登录、代码分层、
-统一权限控制、统一异常处理、统一数据返回响应、数据库、swagger、restful规范接口等。
------------------------------
+统一权限控制、统一异常处理、统一数据返回响应、数据库、swagger、restful规范接口等。`
+
 
 # 快速开始
 1. 下载代码到本地    
@@ -41,13 +41,11 @@ index name_index(name)
 
 3. 修改application.properties配置文件
 * 将数据库url中的host改为自己的数据库ip
->spring.datasource.url=jdbc:mysql://host:3306/library?useUnicode=true
-> &serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true
-> &allowMultiQueries=true
+`spring.datasource.url=jdbc:mysql://host:3306/library?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true &allowMultiQueries=true`
 * 将数据库的user改为自己数据库的user
->spring.datasource.username=root  
+`spring.datasource.username=xxx`
 * 将数据库用户密码改为自己数据库的密码
->spring.datasource.password=xxx
+`spring.datasource.password=xxx`
 
 4. 编译打包  
 执行打包命令：    
@@ -58,7 +56,7 @@ index name_index(name)
 这样程序就运行起来了，接口就可以正常访问了。
 6. swagger查看API文档  
    这样就可以打开 [swagger界面](http://localhost:8080/swagger-ui/index.html)查看api文档了。
------------------------------
+
 
 # API
 ## user接口
